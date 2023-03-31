@@ -1,33 +1,39 @@
 #include "calc.h"
 #include <inttypes.h>
+#include <string.h>
 
 
 char *format_for_display( union u_reg r_format) {
   
   printf("radix: %d  wsize: %d  sign: %d\n", radix, wsize, sign);
 
-  static char buff[70];
+  static char buff[DPY_MAX];
+  char *rfmt = buff;
 
   // ugly nested switch for now
   switch( radix) {
+
+  // binary:  groups of 8 bits with "." separator
   case 2:
     switch( wsize) {
-    case 8:			/* print 8 bit binary */
-      sp_bin( buff, sizeof(buff), 1, r_format.u64);
+    case 8:
+      sp_bin( buff, 1, r_format.u64);
       break;
     case 16:
-      sp_bin( buff, sizeof(buff), 2, r_format.u64);
+      sp_bin( buff, 2, r_format.u64);
       break;
     case 32:
-      sp_bin( buff, sizeof(buff), 4, r_format.u64);
+      sp_bin( buff, 4, r_format.u64);
       break;
     case 64:
-      sp_bin( buff, sizeof(buff), 8, r_format.u64);
+      sp_bin( buff, 8, r_format.u64);
       break;
     default:
       printf("ERROR!  wsize = %d\n", wsize);
     }
     break;
+
+  // decimal: format using snpring, insert commas after
   case 10:
     switch( wsize) {
     case 8:
@@ -57,30 +63,38 @@ char *format_for_display( union u_reg r_format) {
     default:
       printf("ERROR!  wsize = %d\n", wsize);
     }
+    // insert commas
+    rfmt = insert_every( buff, 3, ',');
     break;
+
+  // hex: insert "." every 4
   case 16:
     switch( wsize) {
     case 8:
-      snprintf( buff, sizeof(buff), "%" PRIx8, r_format.u8);
+      snprintf( buff, sizeof(buff), "%02" PRIx8, r_format.u8);
       break;
     case 16:
-      snprintf( buff, sizeof(buff), "%" PRIx16, r_format.u16);
+      snprintf( buff, sizeof(buff), "%04" PRIx16, r_format.u16);
       break;
     case 32:
-      snprintf( buff, sizeof(buff), "%" PRIx32, r_format.u32);
+      snprintf( buff, sizeof(buff), "%08" PRIx32, r_format.u32);
       break;
     case 64:
-      snprintf( buff, sizeof(buff), "%" PRIx64, r_format.u64);
+      snprintf( buff, sizeof(buff), "%016" PRIx64, r_format.u64);
       break;
     default:
       printf("ERROR!  wsize = %d\n", wsize);
     }
+    rfmt = insert_every( buff, 4, '.');
     break;
+
+
   default:
     break;
   }
 
-  return buff;
+  
+  return rfmt;
 }
 
 
@@ -98,12 +112,14 @@ void calc_update_display() {
 
 // binary print byte
 char *sp_byt( char *s, uint8_t v) {
-  for( int i=0, b=0x80; i++, b>>=1; i<8)
+  for( int i=0, b=0x80; 
+       i++, b>>=1; 
+       i<8)
     *s++ = ((v & b) ? '1' : '0');
   return s;
 }
 
-void sp_bin( char *s, int siz, int nb, uint64_t v) {
+void sp_bin( char *s, int nb, uint64_t v) {
   char *p = s;
   uint8_t b;
 
@@ -222,3 +238,57 @@ uint64_t mask_bits( uint64_t v, int siz) {
 
   return r;
 }
+
+
+// start at end of string, insert c every n characters
+// return pointer to static (modified) copy
+char *insert_every( char *str, int n, char c) {
+
+  printf("insert_every( \"%s\", %d, '%c')\n",
+	 str, n, c);
+
+  static char buff[DPY_MAX];
+  char *dp = buff;		/* destination pointer */
+  char *sp = &str[strlen(str)-1]; /* source pointer, last char of input string */
+  
+  if( strlen(str) < n)		/* protect against short string */
+    return str;
+
+  for( size_t i=0; i<strlen(str); i++) {
+    if( i > 0 && !(i % n))
+      *dp++ = c;
+    *dp++ = *sp--;
+  }
+  *dp++ = '\0';
+
+  printf("insert_every first result = \"%s\"\n", buff);
+
+  str_rev( buff);
+  return buff;
+}
+
+// swap two chars in place
+void swap_char( char *cx, char *cy) {
+  *cx = *cx ^ *cy;
+  *cy = *cx ^ *cy;
+  *cx = *cx ^ *cy;
+}
+
+// reverse a string in place
+void str_rev( char *s) {
+  int n = strlen(s);
+
+  printf("str_rev( \"%s\")\n", s);
+
+  if( !n) return;			/* protect against empty strings */
+  if( n < 4)
+    swap_char( &s[0], &s[n-1]);
+  else {
+    for( int i=0; i<n/2; i++)
+      swap_char(&s[i], &s[n-i-1]);
+  }
+
+  printf("str_rev( \"%s\")\n", s);
+
+}
+  

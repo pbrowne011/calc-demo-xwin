@@ -2,6 +2,9 @@
 
 #include <stdint.h>
 
+// display buffer max size
+#define DPY_MAX 100
+
 // stack size (match form!)
 #define STACK_SIZE 4
 
@@ -63,7 +66,7 @@ void calc_update_display();
 char *format_for_display( union u_reg r);
 
 // sprintf to binary nb bytes
-void sp_bin( char *s, int siz, int nb, uint64_t v);
+void sp_bin( char *s, int nb, uint64_t v);
 
 // stack ops
 void stack_up();
@@ -73,3 +76,8 @@ void stack_down();
 void set_new_word_size( int size_code);
 uint64_t sign_extend( uint64_t v, int siz);
 uint64_t mask_bits( uint64_t, int siz);
+
+// formatting
+char *insert_every( char *str, int n, char c);
+void str_rev( char *s);
+
