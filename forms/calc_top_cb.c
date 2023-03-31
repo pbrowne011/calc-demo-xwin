@@ -25,7 +25,7 @@ void cb_arith( FL_OBJECT * ob,
 /***************************************
  ***************************************/
 
-void cb_enter( FL_OBJECT * ob,
+void cb_stack( FL_OBJECT * ob,
          long        data )
 {
     /* Fill-in code for callback here */

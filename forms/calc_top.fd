@@ -10,7 +10,7 @@ Unit of measure: FL_COORD_PIXEL
 Name: calc_top
 Width: 608
 Height: 590
-Number of Objects: 38
+Number of Objects: 47
 
 --------------------
 class: FL_BOX
@@ -31,9 +31,27 @@ callback:
 argument: 
 
 --------------------
+class: FL_TEXT
+type: FL_NORMAL_TEXT
+box: 90 50 480 20
+boxtype: FL_FLAT_BOX
+colors: FL_WHITE FL_MCOL
+alignment: FL_ALIGN_LEFT|FL_ALIGN_INSIDE
+style: FL_NORMAL_STYLE
+size: FL_DEFAULT_SIZE
+lcol: FL_RED
+label: text
+shortcut: 
+resize: FL_RESIZE_ALL
+gravity: FL_NoGravity FL_NoGravity
+name: reg_Y
+callback: 
+argument: 
+
+--------------------
 class: FL_BOX
 type: FL_UP_BOX
-box: 170 140 80 20
+box: 190 110 70 20
 boxtype: FL_UP_BOX
 colors: FL_WHITE FL_COL1
 alignment: FL_ALIGN_CENTER
@@ -51,7 +69,7 @@ argument:
 --------------------
 class: FL_BOX
 type: FL_UP_BOX
-box: 90 90 150 20
+box: 90 90 170 20
 boxtype: FL_UP_BOX
 colors: FL_WHITE FL_COL1
 alignment: FL_ALIGN_CENTER
@@ -69,7 +87,7 @@ argument:
 --------------------
 class: FL_BUTTON
 type: FL_NORMAL_BUTTON
-box: 140 300 40 30
+box: 140 340 40 30
 boxtype: FL_UP_BOX
 colors: FL_BLACK FL_COL1
 alignment: FL_ALIGN_CENTER
@@ -87,7 +105,7 @@ argument: 1
 --------------------
 class: FL_BUTTON
 type: FL_NORMAL_BUTTON
-box: 180 300 40 30
+box: 180 340 40 30
 boxtype: FL_UP_BOX
 colors: FL_BLACK FL_COL1
 alignment: FL_ALIGN_CENTER
@@ -105,7 +123,7 @@ argument: 2
 --------------------
 class: FL_BUTTON
 type: FL_NORMAL_BUTTON
-box: 220 300 40 30
+box: 220 340 40 30
 boxtype: FL_UP_BOX
 colors: FL_BLACK FL_COL1
 alignment: FL_ALIGN_CENTER
@@ -123,7 +141,7 @@ argument: 3
 --------------------
 class: FL_BUTTON
 type: FL_NORMAL_BUTTON
-box: 90 240 40 30
+box: 90 280 40 30
 boxtype: FL_UP_BOX
 colors: FL_BLACK FL_COL1
 alignment: FL_ALIGN_CENTER
@@ -141,7 +159,7 @@ argument: 1
 --------------------
 class: FL_BUTTON
 type: FL_NORMAL_BUTTON
-box: 90 270 40 30
+box: 90 310 40 30
 boxtype: FL_UP_BOX
 colors: FL_BLACK FL_COL1
 alignment: FL_ALIGN_CENTER
@@ -159,7 +177,7 @@ argument: 2
 --------------------
 class: FL_BUTTON
 type: FL_NORMAL_BUTTON
-box: 90 300 40 30
+box: 90 340 40 30
 boxtype: FL_UP_BOX
 colors: FL_BLACK FL_COL1
 alignment: FL_ALIGN_CENTER
@@ -177,7 +195,7 @@ argument: 3
 --------------------
 class: FL_BUTTON
 type: FL_NORMAL_BUTTON
-box: 90 330 40 30
+box: 90 370 40 30
 boxtype: FL_UP_BOX
 colors: FL_BLACK FL_COL1
 alignment: FL_ALIGN_CENTER
@@ -195,7 +213,7 @@ argument: 4
 --------------------
 class: FL_BUTTON
 type: FL_NORMAL_BUTTON
-box: 140 330 40 30
+box: 140 370 40 30
 boxtype: FL_UP_BOX
 colors: FL_BLACK FL_COL1
 alignment: FL_ALIGN_CENTER
@@ -213,7 +231,7 @@ argument: 0
 --------------------
 class: FL_BUTTON
 type: FL_NORMAL_BUTTON
-box: 90 140 70 30
+box: 90 180 70 30
 boxtype: FL_UP_BOX
 colors: FL_BLACK FL_COL1
 alignment: FL_ALIGN_CENTER
@@ -225,13 +243,13 @@ shortcut:
 resize: FL_RESIZE_ALL
 gravity: FL_NoGravity FL_NoGravity
 name: enter
-callback: cb_enter
-argument: 0
+callback: cb_stack
+argument: 1
 
 --------------------
 class: FL_BUTTON
 type: FL_NORMAL_BUTTON
-box: 140 270 40 30
+box: 140 310 40 30
 boxtype: FL_UP_BOX
 colors: FL_BLACK FL_COL1
 alignment: FL_ALIGN_CENTER
@@ -249,7 +267,7 @@ argument: 4
 --------------------
 class: FL_BUTTON
 type: FL_NORMAL_BUTTON
-box: 180 270 40 30
+box: 180 310 40 30
 boxtype: FL_UP_BOX
 colors: FL_BLACK FL_COL1
 alignment: FL_ALIGN_CENTER
@@ -267,7 +285,7 @@ argument: 5
 --------------------
 class: FL_BUTTON
 type: FL_NORMAL_BUTTON
-box: 220 270 40 30
+box: 220 310 40 30
 boxtype: FL_UP_BOX
 colors: FL_BLACK FL_COL1
 alignment: FL_ALIGN_CENTER
@@ -285,7 +303,7 @@ argument: 6
 --------------------
 class: FL_BUTTON
 type: FL_NORMAL_BUTTON
-box: 140 240 40 30
+box: 140 280 40 30
 boxtype: FL_UP_BOX
 colors: FL_BLACK FL_COL1
 alignment: FL_ALIGN_CENTER
@@ -303,7 +321,7 @@ argument: 7
 --------------------
 class: FL_BUTTON
 type: FL_NORMAL_BUTTON
-box: 180 240 40 30
+box: 180 280 40 30
 boxtype: FL_UP_BOX
 colors: FL_BLACK FL_COL1
 alignment: FL_ALIGN_CENTER
@@ -321,7 +339,7 @@ argument: 8
 --------------------
 class: FL_BUTTON
 type: FL_NORMAL_BUTTON
-box: 220 240 40 30
+box: 220 280 40 30
 boxtype: FL_UP_BOX
 colors: FL_BLACK FL_COL1
 alignment: FL_ALIGN_CENTER
@@ -339,7 +357,7 @@ argument: 9
 --------------------
 class: FL_TEXT
 type: FL_NORMAL_TEXT
-box: 90 50 480 30
+box: 90 70 480 20
 boxtype: FL_FLAT_BOX
 colors: FL_WHITE FL_MCOL
 alignment: FL_ALIGN_LEFT|FL_ALIGN_INSIDE
@@ -350,14 +368,14 @@ label: text
 shortcut: 
 resize: FL_RESIZE_ALL
 gravity: FL_NoGravity FL_NoGravity
-name: display
+name: reg_X
 callback: 
 argument: 
 
 --------------------
 class: FL_BOX
 type: FL_UP_BOX
-box: 90 110 190 20
+box: 90 140 190 20
 boxtype: FL_UP_BOX
 colors: FL_WHITE FL_COL1
 alignment: FL_ALIGN_CENTER
@@ -379,7 +397,7 @@ name: g_radix
 --------------------
 class: FL_CHECKBUTTON
 type: FL_RADIO_BUTTON
-box: 140 90 50 20
+box: 190 90 50 20
 boxtype: FL_NO_BOX
 colors: FL_WHITE FL_DARKMAGENTA
 alignment: FL_ALIGN_CENTER
@@ -416,7 +434,7 @@ argument: 1
 --------------------
 class: FL_CHECKBUTTON
 type: FL_RADIO_BUTTON
-box: 190 90 50 20
+box: 140 90 50 20
 boxtype: FL_NO_BOX
 colors: FL_WHITE FL_DARKMAGENTA
 alignment: FL_ALIGN_CENTER
@@ -441,7 +459,7 @@ name: g_wsize
 --------------------
 class: FL_CHECKBUTTON
 type: FL_RADIO_BUTTON
-box: 140 110 50 20
+box: 140 140 50 20
 boxtype: FL_NO_BOX
 colors: FL_WHITE FL_DARKMAGENTA
 alignment: FL_ALIGN_CENTER
@@ -460,7 +478,7 @@ argument: 5
 --------------------
 class: FL_CHECKBUTTON
 type: FL_RADIO_BUTTON
-box: 90 110 50 20
+box: 90 140 50 20
 boxtype: FL_NO_BOX
 colors: FL_WHITE FL_DARKMAGENTA
 alignment: FL_ALIGN_CENTER
@@ -478,7 +496,7 @@ argument: 4
 --------------------
 class: FL_CHECKBUTTON
 type: FL_RADIO_BUTTON
-box: 240 110 50 20
+box: 240 140 50 20
 boxtype: FL_NO_BOX
 colors: FL_WHITE FL_DARKMAGENTA
 alignment: FL_ALIGN_CENTER
@@ -496,7 +514,7 @@ argument: 7
 --------------------
 class: FL_CHECKBUTTON
 type: FL_RADIO_BUTTON
-box: 190 110 50 20
+box: 190 140 50 20
 boxtype: FL_NO_BOX
 colors: FL_WHITE FL_DARKMAGENTA
 alignment: FL_ALIGN_CENTER
@@ -517,7 +535,7 @@ class: FL_END_GROUP
 --------------------
 class: FL_CHECKBUTTON
 type: FL_PUSH_BUTTON
-box: 180 140 70 20
+box: 190 110 70 20
 boxtype: FL_NO_BOX
 colors: FL_WHITE FL_DARKMAGENTA
 alignment: FL_ALIGN_CENTER
@@ -535,7 +553,7 @@ argument: 0
 --------------------
 class: FL_BUTTON
 type: FL_NORMAL_BUTTON
-box: 140 210 40 30
+box: 140 250 40 30
 boxtype: FL_UP_BOX
 colors: FL_BLACK FL_COL1
 alignment: FL_ALIGN_CENTER
@@ -553,7 +571,7 @@ argument: 10
 --------------------
 class: FL_BUTTON
 type: FL_NORMAL_BUTTON
-box: 180 210 40 30
+box: 180 250 40 30
 boxtype: FL_UP_BOX
 colors: FL_BLACK FL_COL1
 alignment: FL_ALIGN_CENTER
@@ -571,7 +589,7 @@ argument: 11
 --------------------
 class: FL_BUTTON
 type: FL_NORMAL_BUTTON
-box: 220 210 40 30
+box: 220 250 40 30
 boxtype: FL_UP_BOX
 colors: FL_BLACK FL_COL1
 alignment: FL_ALIGN_CENTER
@@ -589,7 +607,7 @@ argument: 12
 --------------------
 class: FL_BUTTON
 type: FL_NORMAL_BUTTON
-box: 140 180 40 30
+box: 140 220 40 30
 boxtype: FL_UP_BOX
 colors: FL_BLACK FL_COL1
 alignment: FL_ALIGN_CENTER
@@ -607,7 +625,7 @@ argument: 13
 --------------------
 class: FL_BUTTON
 type: FL_NORMAL_BUTTON
-box: 180 180 40 30
+box: 180 220 40 30
 boxtype: FL_UP_BOX
 colors: FL_BLACK FL_COL1
 alignment: FL_ALIGN_CENTER
@@ -625,7 +643,7 @@ argument: 14
 --------------------
 class: FL_BUTTON
 type: FL_NORMAL_BUTTON
-box: 220 180 40 30
+box: 220 220 40 30
 boxtype: FL_UP_BOX
 colors: FL_BLACK FL_COL1
 alignment: FL_ALIGN_CENTER
@@ -639,6 +657,150 @@ gravity: FL_NoGravity FL_NoGravity
 name: d_F
 callback: cb_digit
 argument: 15
+
+--------------------
+class: FL_BUTTON
+type: FL_NORMAL_BUTTON
+box: 220 180 40 30
+boxtype: FL_UP_BOX
+colors: FL_BLACK FL_COL1
+alignment: FL_ALIGN_CENTER
+style: FL_NORMAL_STYLE
+size: FL_DEFAULT_SIZE
+lcol: FL_WHITE
+label: CLx
+shortcut: 
+resize: FL_RESIZE_ALL
+gravity: FL_NoGravity FL_NoGravity
+name: 
+callback: cb_arith
+argument: 0
+
+--------------------
+class: FL_BUTTON
+type: FL_NORMAL_BUTTON
+box: 160 180 40 30
+boxtype: FL_UP_BOX
+colors: FL_BLACK FL_COL1
+alignment: FL_ALIGN_CENTER
+style: FL_NORMAL_STYLE
+size: FL_DEFAULT_SIZE
+lcol: FL_WHITE
+label: R\/
+shortcut: 
+resize: FL_RESIZE_ALL
+gravity: FL_NoGravity FL_NoGravity
+name: b_drop
+callback: cb_stack
+argument: 0
+
+--------------------
+class: FL_TEXT
+type: FL_NORMAL_TEXT
+box: 90 30 480 20
+boxtype: FL_FLAT_BOX
+colors: FL_WHITE FL_MCOL
+alignment: FL_ALIGN_LEFT|FL_ALIGN_INSIDE
+style: FL_NORMAL_STYLE
+size: FL_DEFAULT_SIZE
+lcol: FL_RED
+label: text
+shortcut: 
+resize: FL_RESIZE_ALL
+gravity: FL_NoGravity FL_NoGravity
+name: reg_Z
+callback: 
+argument: 
+
+--------------------
+class: FL_TEXT
+type: FL_NORMAL_TEXT
+box: 90 10 480 20
+boxtype: FL_FLAT_BOX
+colors: FL_WHITE FL_MCOL
+alignment: FL_ALIGN_LEFT|FL_ALIGN_INSIDE
+style: FL_NORMAL_STYLE
+size: FL_DEFAULT_SIZE
+lcol: FL_RED
+label: text
+shortcut: 
+resize: FL_RESIZE_ALL
+gravity: FL_NoGravity FL_NoGravity
+name: reg_T
+callback: 
+argument: 
+
+--------------------
+class: FL_TEXT
+type: FL_NORMAL_TEXT
+box: 60 70 20 20
+boxtype: FL_FLAT_BOX
+colors: FL_COL1 FL_MCOL
+alignment: FL_ALIGN_LEFT|FL_ALIGN_INSIDE
+style: FL_NORMAL_STYLE
+size: FL_DEFAULT_SIZE
+lcol: FL_BLACK
+label: X:
+shortcut: 
+resize: FL_RESIZE_ALL
+gravity: FL_NoGravity FL_NoGravity
+name: 
+callback: 
+argument: 
+
+--------------------
+class: FL_TEXT
+type: FL_NORMAL_TEXT
+box: 60 50 20 20
+boxtype: FL_FLAT_BOX
+colors: FL_COL1 FL_MCOL
+alignment: FL_ALIGN_LEFT|FL_ALIGN_INSIDE
+style: FL_NORMAL_STYLE
+size: FL_DEFAULT_SIZE
+lcol: FL_BLACK
+label: Y:
+shortcut: 
+resize: FL_RESIZE_ALL
+gravity: FL_NoGravity FL_NoGravity
+name: 
+callback: 
+argument: 
+
+--------------------
+class: FL_TEXT
+type: FL_NORMAL_TEXT
+box: 60 30 20 20
+boxtype: FL_FLAT_BOX
+colors: FL_COL1 FL_MCOL
+alignment: FL_ALIGN_LEFT|FL_ALIGN_INSIDE
+style: FL_NORMAL_STYLE
+size: FL_DEFAULT_SIZE
+lcol: FL_BLACK
+label: Z:
+shortcut: 
+resize: FL_RESIZE_ALL
+gravity: FL_NoGravity FL_NoGravity
+name: 
+callback: 
+argument: 
+
+--------------------
+class: FL_TEXT
+type: FL_NORMAL_TEXT
+box: 60 10 20 20
+boxtype: FL_FLAT_BOX
+colors: FL_COL1 FL_MCOL
+alignment: FL_ALIGN_LEFT|FL_ALIGN_INSIDE
+style: FL_NORMAL_STYLE
+size: FL_DEFAULT_SIZE
+lcol: FL_BLACK
+label: T:
+shortcut: 
+resize: FL_RESIZE_ALL
+gravity: FL_NoGravity FL_NoGravity
+name: 
+callback: 
+argument: 
 
 ==============================
 create_the_forms

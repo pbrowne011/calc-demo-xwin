@@ -12,8 +12,8 @@ main( int    argc,
   //    FD_calc_top *fd_calc_top;  <ESH> moved to global
 
   // these should match the form defaults
-  radix = 10;			/* decimal */
-  wsize = 32;			/* 32-bits */
+  radix = DEF_RADIX;
+  wsize = DEF_SIZE;
   sign = 0;			/* unsigned */
 
     fl_initialize( &argc, argv, 0, 0, 0 );

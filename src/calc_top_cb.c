@@ -11,12 +11,17 @@
 void cb_mode( FL_OBJECT * ob,
          long        data )
 {
-    /* Fill-in code for callback here */
+
+  // switch modes
   printf("cb_mode: %ld\n", data);
   switch( data) {
+
+  // toggle signed mode
   case M_SIG:
     sign ^= 1;
     break;
+
+  // set the radix
   case M_HEX:
     radix = 16;
     break;
@@ -26,17 +31,15 @@ void cb_mode( FL_OBJECT * ob,
   case M_BIN:
     radix = 2;
     break;
+
+  // change word size, deal with sign extend etc
+  // operate on entire stack
   case M_64:
-    wsize = 64;
-    break;
   case M_32:
-    wsize = 32;
-    break;
   case M_16:
-    wsize = 16;
-    break;
   case M_8:
-    wsize = 8;
+    printf("Set word size code: %ld\n", data);
+    set_new_word_size( data);
     break;
   default:
     printf("Unknown mode %ld\n", data);
@@ -73,6 +76,16 @@ void cb_arith( FL_OBJECT * ob,
     /* Fill-in code for callback here */
   printf("cb_arith: %ld\n", data);
 
+  switch( data) {
+  case A_CLR:
+    r_display.u64 = 0;
+    break;
+  case A_SUB:
+  case A_ADD:
+  case A_MUL:
+  case A_DIV:
+  }
+
   calc_update_display();
 }
 
@@ -80,16 +93,25 @@ void cb_arith( FL_OBJECT * ob,
 /***************************************
  ***************************************/
 
-void cb_enter( FL_OBJECT * ob,
+void cb_stack( FL_OBJECT * ob,
          long        data )
 {
     /* Fill-in code for callback here */
-  printf("cb_enter: %ld\n", data);
 
-  r_display.u64 = 0;
+  printf("cb_stack: %ld\n", data);
+  switch( data) {
+  case S_DROP:
+    stack_down();
+    break;
+  case S_PUSH:
+    stack_up();
+    r_x.u64 = 0;
+    break;
+  }
 
   calc_update_display();
 }
+
 
 
 
