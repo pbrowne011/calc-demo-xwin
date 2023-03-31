@@ -1,17 +1,20 @@
 #include <stdint.h>
 
+#define CALC_TOP_MAIN
+
 #include "calc.h"
 #include "calc_top.h"
-
-FD_calc_top *fd_calc_top;  // <ESH> moved to global
-
-union u_reg r_display;
 
 int
 main( int    argc,
       char * argv[ ] )
 {
   //    FD_calc_top *fd_calc_top;  <ESH> moved to global
+
+  // these should match the form defaults
+  radix = 10;			/* decimal */
+  wsize = 32;			/* 32-bits */
+  sign = 0;			/* unsigned */
 
     fl_initialize( &argc, argv, 0, 0, 0 );
     fd_calc_top = create_form_calc_top( );

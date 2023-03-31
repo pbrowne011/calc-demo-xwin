@@ -9,13 +9,13 @@ Unit of measure: FL_COORD_PIXEL
 =============== FORM ===============
 Name: calc_top
 Width: 608
-Height: 590
-Number of Objects: 38
+Height: 558
+Number of Objects: 32
 
 --------------------
 class: FL_BOX
 type: FL_FLAT_BOX
-box: 0 0 608 590
+box: 0 0 608 558
 boxtype: FL_FLAT_BOX
 colors: FL_COL1 FL_COL1
 alignment: FL_ALIGN_CENTER
@@ -69,7 +69,7 @@ argument:
 --------------------
 class: FL_BUTTON
 type: FL_NORMAL_BUTTON
-box: 140 300 40 30
+box: 140 240 40 30
 boxtype: FL_UP_BOX
 colors: FL_BLACK FL_COL1
 alignment: FL_ALIGN_CENTER
@@ -87,7 +87,7 @@ argument: 1
 --------------------
 class: FL_BUTTON
 type: FL_NORMAL_BUTTON
-box: 180 300 40 30
+box: 180 240 40 30
 boxtype: FL_UP_BOX
 colors: FL_BLACK FL_COL1
 alignment: FL_ALIGN_CENTER
@@ -105,7 +105,7 @@ argument: 2
 --------------------
 class: FL_BUTTON
 type: FL_NORMAL_BUTTON
-box: 220 300 40 30
+box: 220 240 40 30
 boxtype: FL_UP_BOX
 colors: FL_BLACK FL_COL1
 alignment: FL_ALIGN_CENTER
@@ -123,7 +123,7 @@ argument: 3
 --------------------
 class: FL_BUTTON
 type: FL_NORMAL_BUTTON
-box: 90 240 40 30
+box: 90 180 40 30
 boxtype: FL_UP_BOX
 colors: FL_BLACK FL_COL1
 alignment: FL_ALIGN_CENTER
@@ -141,7 +141,7 @@ argument: 1
 --------------------
 class: FL_BUTTON
 type: FL_NORMAL_BUTTON
-box: 90 270 40 30
+box: 90 210 40 30
 boxtype: FL_UP_BOX
 colors: FL_BLACK FL_COL1
 alignment: FL_ALIGN_CENTER
@@ -159,7 +159,7 @@ argument: 2
 --------------------
 class: FL_BUTTON
 type: FL_NORMAL_BUTTON
-box: 90 300 40 30
+box: 90 240 40 30
 boxtype: FL_UP_BOX
 colors: FL_BLACK FL_COL1
 alignment: FL_ALIGN_CENTER
@@ -177,7 +177,7 @@ argument: 3
 --------------------
 class: FL_BUTTON
 type: FL_NORMAL_BUTTON
-box: 90 330 40 30
+box: 90 270 40 30
 boxtype: FL_UP_BOX
 colors: FL_BLACK FL_COL1
 alignment: FL_ALIGN_CENTER
@@ -195,7 +195,7 @@ argument: 4
 --------------------
 class: FL_BUTTON
 type: FL_NORMAL_BUTTON
-box: 140 330 40 30
+box: 140 270 40 30
 boxtype: FL_UP_BOX
 colors: FL_BLACK FL_COL1
 alignment: FL_ALIGN_CENTER
@@ -203,10 +203,10 @@ style: FL_NORMAL_STYLE
 size: FL_DEFAULT_SIZE
 lcol: FL_WHITE
 label: 0
-shortcut: 0
+shortcut: 
 resize: FL_RESIZE_ALL
 gravity: FL_NoGravity FL_NoGravity
-name: d_0
+name: 
 callback: cb_digit
 argument: 0
 
@@ -231,7 +231,7 @@ argument: 0
 --------------------
 class: FL_BUTTON
 type: FL_NORMAL_BUTTON
-box: 140 270 40 30
+box: 140 210 40 30
 boxtype: FL_UP_BOX
 colors: FL_BLACK FL_COL1
 alignment: FL_ALIGN_CENTER
@@ -239,7 +239,7 @@ style: FL_NORMAL_STYLE
 size: FL_DEFAULT_SIZE
 lcol: FL_WHITE
 label: 4
-shortcut: 4
+shortcut: 
 resize: FL_RESIZE_ALL
 gravity: FL_NoGravity FL_NoGravity
 name: d4
@@ -249,7 +249,7 @@ argument: 4
 --------------------
 class: FL_BUTTON
 type: FL_NORMAL_BUTTON
-box: 180 270 40 30
+box: 180 210 40 30
 boxtype: FL_UP_BOX
 colors: FL_BLACK FL_COL1
 alignment: FL_ALIGN_CENTER
@@ -257,7 +257,7 @@ style: FL_NORMAL_STYLE
 size: FL_DEFAULT_SIZE
 lcol: FL_WHITE
 label: 5
-shortcut: 5
+shortcut: 
 resize: FL_RESIZE_ALL
 gravity: FL_NoGravity FL_NoGravity
 name: d5
@@ -267,7 +267,7 @@ argument: 5
 --------------------
 class: FL_BUTTON
 type: FL_NORMAL_BUTTON
-box: 220 270 40 30
+box: 220 210 40 30
 boxtype: FL_UP_BOX
 colors: FL_BLACK FL_COL1
 alignment: FL_ALIGN_CENTER
@@ -275,7 +275,7 @@ style: FL_NORMAL_STYLE
 size: FL_DEFAULT_SIZE
 lcol: FL_WHITE
 label: 6
-shortcut: 6
+shortcut: 
 resize: FL_RESIZE_ALL
 gravity: FL_NoGravity FL_NoGravity
 name: d6
@@ -285,7 +285,7 @@ argument: 6
 --------------------
 class: FL_BUTTON
 type: FL_NORMAL_BUTTON
-box: 140 240 40 30
+box: 140 180 40 30
 boxtype: FL_UP_BOX
 colors: FL_BLACK FL_COL1
 alignment: FL_ALIGN_CENTER
@@ -293,7 +293,7 @@ style: FL_NORMAL_STYLE
 size: FL_DEFAULT_SIZE
 lcol: FL_WHITE
 label: 7
-shortcut: 7
+shortcut: 
 resize: FL_RESIZE_ALL
 gravity: FL_NoGravity FL_NoGravity
 name: d7
@@ -303,7 +303,7 @@ argument: 7
 --------------------
 class: FL_BUTTON
 type: FL_NORMAL_BUTTON
-box: 180 240 40 30
+box: 180 180 40 30
 boxtype: FL_UP_BOX
 colors: FL_BLACK FL_COL1
 alignment: FL_ALIGN_CENTER
@@ -311,7 +311,7 @@ style: FL_NORMAL_STYLE
 size: FL_DEFAULT_SIZE
 lcol: FL_WHITE
 label: 8
-shortcut: 8
+shortcut: 
 resize: FL_RESIZE_ALL
 gravity: FL_NoGravity FL_NoGravity
 name: d8
@@ -321,7 +321,7 @@ argument: 8
 --------------------
 class: FL_BUTTON
 type: FL_NORMAL_BUTTON
-box: 220 240 40 30
+box: 220 180 40 30
 boxtype: FL_UP_BOX
 colors: FL_BLACK FL_COL1
 alignment: FL_ALIGN_CENTER
@@ -329,7 +329,7 @@ style: FL_NORMAL_STYLE
 size: FL_DEFAULT_SIZE
 lcol: FL_WHITE
 label: 9
-shortcut: 9
+shortcut: 
 resize: FL_RESIZE_ALL
 gravity: FL_NoGravity FL_NoGravity
 name: d9
@@ -339,7 +339,7 @@ argument: 9
 --------------------
 class: FL_TEXT
 type: FL_NORMAL_TEXT
-box: 90 50 480 30
+box: 90 40 180 50
 boxtype: FL_FLAT_BOX
 colors: FL_WHITE FL_MCOL
 alignment: FL_ALIGN_LEFT|FL_ALIGN_INSIDE
@@ -531,114 +531,6 @@ gravity: FL_NoGravity FL_NoGravity
 name: lab_signed
 callback: cb_mode
 argument: 0
-
---------------------
-class: FL_BUTTON
-type: FL_NORMAL_BUTTON
-box: 140 210 40 30
-boxtype: FL_UP_BOX
-colors: FL_BLACK FL_COL1
-alignment: FL_ALIGN_CENTER
-style: FL_NORMAL_STYLE
-size: FL_DEFAULT_SIZE
-lcol: FL_WHITE
-label: A
-shortcut: A
-resize: FL_RESIZE_ALL
-gravity: FL_NoGravity FL_NoGravity
-name: d_A
-callback: cb_digit
-argument: 10
-
---------------------
-class: FL_BUTTON
-type: FL_NORMAL_BUTTON
-box: 180 210 40 30
-boxtype: FL_UP_BOX
-colors: FL_BLACK FL_COL1
-alignment: FL_ALIGN_CENTER
-style: FL_NORMAL_STYLE
-size: FL_DEFAULT_SIZE
-lcol: FL_WHITE
-label: B
-shortcut: B
-resize: FL_RESIZE_ALL
-gravity: FL_NoGravity FL_NoGravity
-name: d_B
-callback: cb_digit
-argument: 11
-
---------------------
-class: FL_BUTTON
-type: FL_NORMAL_BUTTON
-box: 220 210 40 30
-boxtype: FL_UP_BOX
-colors: FL_BLACK FL_COL1
-alignment: FL_ALIGN_CENTER
-style: FL_NORMAL_STYLE
-size: FL_DEFAULT_SIZE
-lcol: FL_WHITE
-label: C
-shortcut: C
-resize: FL_RESIZE_ALL
-gravity: FL_NoGravity FL_NoGravity
-name: d_C
-callback: cb_digit
-argument: 12
-
---------------------
-class: FL_BUTTON
-type: FL_NORMAL_BUTTON
-box: 140 180 40 30
-boxtype: FL_UP_BOX
-colors: FL_BLACK FL_COL1
-alignment: FL_ALIGN_CENTER
-style: FL_NORMAL_STYLE
-size: FL_DEFAULT_SIZE
-lcol: FL_WHITE
-label: D
-shortcut: D
-resize: FL_RESIZE_ALL
-gravity: FL_NoGravity FL_NoGravity
-name: d_D
-callback: cb_digit
-argument: 13
-
---------------------
-class: FL_BUTTON
-type: FL_NORMAL_BUTTON
-box: 180 180 40 30
-boxtype: FL_UP_BOX
-colors: FL_BLACK FL_COL1
-alignment: FL_ALIGN_CENTER
-style: FL_NORMAL_STYLE
-size: FL_DEFAULT_SIZE
-lcol: FL_WHITE
-label: E
-shortcut: E
-resize: FL_RESIZE_ALL
-gravity: FL_NoGravity FL_NoGravity
-name: d_E
-callback: cb_digit
-argument: 14
-
---------------------
-class: FL_BUTTON
-type: FL_NORMAL_BUTTON
-box: 220 180 40 30
-boxtype: FL_UP_BOX
-colors: FL_BLACK FL_COL1
-alignment: FL_ALIGN_CENTER
-style: FL_NORMAL_STYLE
-size: FL_DEFAULT_SIZE
-lcol: FL_WHITE
-label: F
-shortcut: F
-resize: FL_RESIZE_ALL
-gravity: FL_NoGravity FL_NoGravity
-name: d_F
-callback: cb_digit
-argument: 15
 
 ==============================
 create_the_forms
