@@ -14,6 +14,9 @@ void cb_mode( FL_OBJECT * ob,
 
   // switch modes
   printf("cb_mode: %ld\n", data);
+
+  push = 1;
+
   switch( data) {
 
   // toggle signed mode
@@ -60,6 +63,12 @@ void cb_digit( FL_OBJECT * ob,
 
   f = fd_calc_top;
 
+  if( push) {
+    push = 0;
+    stack_up();
+    r_display.u64 = 0;
+  }
+
   // handle one digit, ignore wordsize for now
   r_display.u64 = (r_display.u64 * radix) + data;
 
@@ -75,15 +84,28 @@ void cb_arith( FL_OBJECT * ob,
 {
     /* Fill-in code for callback here */
   printf("cb_arith: %ld\n", data);
+  push = 1;
 
   switch( data) {
   case A_CLR:
     r_display.u64 = 0;
     break;
   case A_SUB:
+    r_y.u64 -= r_x.u64;
+    stack_down();
+    break;
   case A_ADD:
+    r_y.u64 += r_x.u64;
+    stack_down();
+    break;
   case A_MUL:
+    r_y.u64 *= r_x.u64;
+    stack_down();
+    break;
   case A_DIV:
+    r_y.u64 /= r_x.u64;
+    stack_down();
+    break;
   }
 
   calc_update_display();

@@ -149,7 +149,7 @@ style: FL_NORMAL_STYLE
 size: FL_DEFAULT_SIZE
 lcol: FL_WHITE
 label: -
-shortcut: 
+shortcut: -
 resize: FL_RESIZE_ALL
 gravity: FL_NoGravity FL_NoGravity
 name: sub
@@ -167,7 +167,7 @@ style: FL_NORMAL_STYLE
 size: FL_DEFAULT_SIZE
 lcol: FL_WHITE
 label: +
-shortcut: 
+shortcut: +
 resize: FL_RESIZE_ALL
 gravity: FL_NoGravity FL_NoGravity
 name: add
@@ -185,7 +185,7 @@ style: FL_NORMAL_STYLE
 size: FL_DEFAULT_SIZE
 lcol: FL_WHITE
 label: X
-shortcut: 
+shortcut: *
 resize: FL_RESIZE_ALL
 gravity: FL_NoGravity FL_NoGravity
 name: mul
@@ -203,7 +203,7 @@ style: FL_NORMAL_STYLE
 size: FL_DEFAULT_SIZE
 lcol: FL_WHITE
 label: /
-shortcut: 
+shortcut: /
 resize: FL_RESIZE_ALL
 gravity: FL_NoGravity FL_NoGravity
 name: div
@@ -239,7 +239,7 @@ style: FL_BOLD_STYLE + FL_SHADOW_STYLE
 size: FL_NORMAL_SIZE
 lcol: FL_WHITE
 label: Enter^
-shortcut: 
+shortcut: ^M
 resize: FL_RESIZE_ALL
 gravity: FL_NoGravity FL_NoGravity
 name: enter
@@ -561,7 +561,7 @@ style: FL_NORMAL_STYLE
 size: FL_DEFAULT_SIZE
 lcol: FL_WHITE
 label: A
-shortcut: A
+shortcut: Aa
 resize: FL_RESIZE_ALL
 gravity: FL_NoGravity FL_NoGravity
 name: d_A
@@ -579,7 +579,7 @@ style: FL_NORMAL_STYLE
 size: FL_DEFAULT_SIZE
 lcol: FL_WHITE
 label: B
-shortcut: B
+shortcut: Bb
 resize: FL_RESIZE_ALL
 gravity: FL_NoGravity FL_NoGravity
 name: d_B
@@ -597,7 +597,7 @@ style: FL_NORMAL_STYLE
 size: FL_DEFAULT_SIZE
 lcol: FL_WHITE
 label: C
-shortcut: C
+shortcut: Cc
 resize: FL_RESIZE_ALL
 gravity: FL_NoGravity FL_NoGravity
 name: d_C
@@ -615,7 +615,7 @@ style: FL_NORMAL_STYLE
 size: FL_DEFAULT_SIZE
 lcol: FL_WHITE
 label: D
-shortcut: D
+shortcut: Dd
 resize: FL_RESIZE_ALL
 gravity: FL_NoGravity FL_NoGravity
 name: d_D
@@ -633,7 +633,7 @@ style: FL_NORMAL_STYLE
 size: FL_DEFAULT_SIZE
 lcol: FL_WHITE
 label: E
-shortcut: E
+shortcut: Ee
 resize: FL_RESIZE_ALL
 gravity: FL_NoGravity FL_NoGravity
 name: d_E
@@ -651,7 +651,7 @@ style: FL_NORMAL_STYLE
 size: FL_DEFAULT_SIZE
 lcol: FL_WHITE
 label: F
-shortcut: F
+shortcut: Ff
 resize: FL_RESIZE_ALL
 gravity: FL_NoGravity FL_NoGravity
 name: d_F

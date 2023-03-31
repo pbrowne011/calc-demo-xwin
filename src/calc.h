@@ -46,12 +46,14 @@ union u_reg {
 #endif
 
 // global variables
-alloc FD_calc_top *fd_calc_top;  // <ESH> moved to global
-alloc union u_reg r_stack[STACK_SIZE];
-alloc union u_reg r_temp;
-alloc int radix;
-alloc int wsize;
-alloc int sign;
+alloc FD_calc_top *fd_calc_top;  // <ESH> GUI pointer
+
+alloc union u_reg r_stack[STACK_SIZE]; /* data stack */
+alloc union u_reg r_temp;	       /* temporary reg */
+alloc int radix;		       /* current radix */
+alloc int wsize;		       /* current word size 8/16/32/64 */
+alloc int sign;			       /* signed (1) or unsigned (0) */
+alloc int push;			       /* (1) means push on next digit */
 
 #define r_display r_stack[0]
 #define r_x r_stack[0]

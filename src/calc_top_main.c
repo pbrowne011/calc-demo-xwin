@@ -12,9 +12,10 @@ main( int    argc,
   //    FD_calc_top *fd_calc_top;  <ESH> moved to global
 
   // these should match the form defaults
-  radix = DEF_RADIX;
-  wsize = DEF_SIZE;
+  radix = DEF_RADIX;		/* radix */
+  wsize = DEF_SIZE;		/* size */
   sign = 0;			/* unsigned */
+  push = 0;
 
     fl_initialize( &argc, argv, 0, 0, 0 );
     fd_calc_top = create_form_calc_top( );
