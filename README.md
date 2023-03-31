@@ -15,4 +15,3 @@ To build:
 Very early screenshot below
 
 [![early_screenshot.jpg](pix/early_screenshot.jpg)]
-
