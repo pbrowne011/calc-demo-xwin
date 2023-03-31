@@ -1,6 +1,11 @@
+#include <stdint.h>
+
+#include "calc.h"
 #include "calc_top.h"
 
 FD_calc_top *fd_calc_top;  // <ESH> moved to global
+
+union u_reg r_display;
 
 int
 main( int    argc,

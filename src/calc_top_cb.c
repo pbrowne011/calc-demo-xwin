@@ -1,10 +1,21 @@
 #include <stdio.h>
 
 #include "calc_top.h"
+#include "calc.h"
 
 extern FD_calc_top *fd_calc_top;  // <ESH> moved to global
+extern union u_reg r_display;
 
 /* Callbacks and freeobj handles for form calc_top */
+
+/***************************************
+ ***************************************/
+
+void cb_mode( FL_OBJECT * ob,
+         long        data )
+{
+    /* Fill-in code for callback here */
+}
 
 /***************************************
  ***************************************/
