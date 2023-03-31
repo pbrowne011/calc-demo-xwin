@@ -149,6 +149,12 @@ void stack_down() {
   r_t = r_temp;
 }
 
+// roll stack down, duplicating T
+void stack_down_copy() {
+  stack_down();
+  r_t = r_z;
+}
+
 // change word size
 // if increasing and in signed mode, sign-extend
 // keep track of old size

@@ -31,6 +31,7 @@
 // stack callback args
 #define S_DROP 0
 #define S_PUSH 1
+#define S_SWAP 2
 
 union u_reg {
   uint8_t u8;
@@ -73,6 +74,7 @@ void sp_bin( char *s, int nb, uint64_t v);
 // stack ops
 void stack_up();
 void stack_down();
+void stack_down_copy();
 
 // change word size
 void set_new_word_size( int size_code);

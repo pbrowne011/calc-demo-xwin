@@ -25,6 +25,7 @@ main( int    argc,
     /* Show the first form */
 
     fl_show_form( fd_calc_top->calc_top, FL_PLACE_CENTERFREE, FL_FULLBORDER, "calc_top" );
+    calc_update_display();
 
     fl_do_forms( );
 

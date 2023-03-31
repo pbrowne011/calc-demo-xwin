@@ -70,7 +70,8 @@ void cb_digit( FL_OBJECT * ob,
   }
 
   // handle one digit, ignore wordsize for now
-  r_display.u64 = (r_display.u64 * radix) + data;
+  if( data < radix)
+    r_display.u64 = (r_display.u64 * radix) + data;
 
   calc_update_display();
 }
@@ -92,19 +93,19 @@ void cb_arith( FL_OBJECT * ob,
     break;
   case A_SUB:
     r_y.u64 -= r_x.u64;
-    stack_down();
+    stack_down_copy();
     break;
   case A_ADD:
     r_y.u64 += r_x.u64;
-    stack_down();
+    stack_down_copy();
     break;
   case A_MUL:
     r_y.u64 *= r_x.u64;
-    stack_down();
+    stack_down_copy();
     break;
   case A_DIV:
     r_y.u64 /= r_x.u64;
-    stack_down();
+    stack_down_copy();
     break;
   }
 
@@ -119,15 +120,21 @@ void cb_stack( FL_OBJECT * ob,
          long        data )
 {
     /* Fill-in code for callback here */
-
+  push = 0;
+  
   printf("cb_stack: %ld\n", data);
   switch( data) {
-  case S_DROP:
+  case S_DROP:			/* roll-down */
     stack_down();
     break;
-  case S_PUSH:
+  case S_PUSH:			/* ENTER */
     stack_up();
     r_x.u64 = 0;
+    break;
+  case S_SWAP:			/* X/Y */
+    r_temp = r_x;
+    r_x = r_y;
+    r_y = r_temp;
     break;
   }
 
