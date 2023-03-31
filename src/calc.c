@@ -1,7 +1,7 @@
 #include "calc.h"
 #include <inttypes.h>
 #include <string.h>
-
+#include <ctype.h>
 
 char *format_for_display( union u_reg r_format) {
   
@@ -242,6 +242,7 @@ uint64_t mask_bits( uint64_t v, int siz) {
 
 // start at end of string, insert c every n characters
 // return pointer to static (modified) copy
+// only insert after digits
 char *insert_every( char *str, int n, char c) {
 
   printf("insert_every( \"%s\", %d, '%c')\n",
@@ -250,14 +251,17 @@ char *insert_every( char *str, int n, char c) {
   static char buff[DPY_MAX];
   char *dp = buff;		/* destination pointer */
   char *sp = &str[strlen(str)-1]; /* source pointer, last char of input string */
-  
+  char lastc;
+
   if( strlen(str) < n)		/* protect against short string */
     return str;
 
   for( size_t i=0; i<strlen(str); i++) {
-    if( i > 0 && !(i % n))
+    if( i > 0 && !(i % n) && isxdigit(*sp)) {
+      printf("Inserting %c before %c\n", c, *sp);
       *dp++ = c;
-    *dp++ = *sp--;
+    }
+    lastc = *dp++ = *sp--;
   }
   *dp++ = '\0';
 
