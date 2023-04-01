@@ -37,8 +37,8 @@ box: 90 50 480 20
 boxtype: FL_FLAT_BOX
 colors: FL_BOTTOM_BCOL FL_MCOL
 alignment: FL_ALIGN_LEFT|FL_ALIGN_INSIDE
-style: FL_NORMAL_STYLE
-size: FL_DEFAULT_SIZE
+style: FL_FIXED_STYLE
+size: FL_MEDIUM_SIZE
 lcol: FL_RED
 label: text
 shortcut: 
@@ -51,7 +51,7 @@ argument:
 --------------------
 class: FL_BOX
 type: FL_UP_BOX
-box: 190 110 70 20
+box: 190 110 80 20
 boxtype: FL_UP_BOX
 colors: FL_WHITE FL_COL1
 alignment: FL_ALIGN_CENTER
@@ -235,7 +235,7 @@ box: 70 180 60 30
 boxtype: FL_UP_BOX
 colors: FL_BLACK FL_COL1
 alignment: FL_ALIGN_CENTER
-style: FL_BOLD_STYLE + FL_SHADOW_STYLE
+style: FL_NORMAL_STYLE + FL_SHADOW_STYLE
 size: FL_NORMAL_SIZE
 lcol: FL_WHITE
 label: Enter^
@@ -361,7 +361,7 @@ box: 90 70 480 20
 boxtype: FL_FLAT_BOX
 colors: FL_BLACK FL_MCOL
 alignment: FL_ALIGN_LEFT|FL_ALIGN_INSIDE
-style: FL_NORMAL_STYLE
+style: FL_FIXED_STYLE
 size: FL_MEDIUM_SIZE
 lcol: FL_RED
 label: text
@@ -535,7 +535,7 @@ class: FL_END_GROUP
 --------------------
 class: FL_CHECKBUTTON
 type: FL_PUSH_BUTTON
-box: 190 110 70 20
+box: 190 110 80 20
 boxtype: FL_NO_BOX
 colors: FL_WHITE FL_DARKMAGENTA
 alignment: FL_ALIGN_CENTER
@@ -701,8 +701,8 @@ box: 90 30 480 20
 boxtype: FL_FLAT_BOX
 colors: FL_BOTTOM_BCOL FL_MCOL
 alignment: FL_ALIGN_LEFT|FL_ALIGN_INSIDE
-style: FL_NORMAL_STYLE
-size: FL_DEFAULT_SIZE
+style: FL_FIXED_STYLE
+size: FL_MEDIUM_SIZE
 lcol: FL_RED
 label: text
 shortcut: 
@@ -719,8 +719,8 @@ box: 90 10 480 20
 boxtype: FL_FLAT_BOX
 colors: FL_BOTTOM_BCOL FL_MCOL
 alignment: FL_ALIGN_LEFT|FL_ALIGN_INSIDE
-style: FL_NORMAL_STYLE
-size: FL_DEFAULT_SIZE
+style: FL_FIXED_STYLE
+size: FL_MEDIUM_SIZE
 lcol: FL_RED
 label: text
 shortcut: 
