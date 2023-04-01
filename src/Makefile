@@ -1,5 +1,7 @@
 all: calc
 
+# CFLAGS = -DDEBUG
+
 clean:
 	rm -f *.o *~ calc
 

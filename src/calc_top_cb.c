@@ -13,8 +13,10 @@ void cb_mode( FL_OBJECT * ob,
 {
 
   // switch modes
+#ifdef DEBUG
   printf("cb_mode: %ld\n", data);
-
+#endif
+  
   push = 1;
 
   switch( data) {
@@ -41,7 +43,9 @@ void cb_mode( FL_OBJECT * ob,
   case M_32:
   case M_16:
   case M_8:
+#ifdef DEBUG
     printf("Set word size code: %ld\n", data);
+#endif
     set_new_word_size( data);
     break;
   default:
@@ -84,7 +88,9 @@ void cb_arith( FL_OBJECT * ob,
          long        data )
 {
     /* Fill-in code for callback here */
+#ifdef DEBUG
   printf("cb_arith: %ld\n", data);
+#endif
   push = 1;
 
   switch( data) {
@@ -122,7 +128,9 @@ void cb_stack( FL_OBJECT * ob,
     /* Fill-in code for callback here */
   push = 0;
   
+#ifdef DEBUG
   printf("cb_stack: %ld\n", data);
+#endif
   switch( data) {
   case S_DROP:			/* roll-down */
     stack_down();

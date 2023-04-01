@@ -8,14 +8,14 @@ Unit of measure: FL_COORD_PIXEL
 
 =============== FORM ===============
 Name: calc_top
-Width: 608
-Height: 590
+Width: 600
+Height: 450
 Number of Objects: 50
 
 --------------------
 class: FL_BOX
 type: FL_FLAT_BOX
-box: 0 0 608 590
+box: 0 0 600 450
 boxtype: FL_FLAT_BOX
 colors: FL_CORNFLOWERBLUE FL_COL1
 alignment: FL_ALIGN_CENTER

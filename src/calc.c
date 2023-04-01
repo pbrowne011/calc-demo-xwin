@@ -5,7 +5,9 @@
 
 char *format_for_display( union u_reg r_format) {
   
+#ifdef DEBUG
   printf("radix: %d  wsize: %d  sign: %d\n", radix, wsize, sign);
+#endif
 
   static char buff[DPY_MAX];
   char *rfmt = buff;
@@ -181,8 +183,9 @@ void set_new_word_size( int size_code)
 	   size_code, M_64, M_8);
   }
 
+#ifdef DEBUG  
   printf("Set word size (old=%d new=%d)\n", old_size, new_size);
-  
+#endif  
   wsize = new_size;
 
   // sign-extend all stack regs to 64 bits if word size larger
@@ -205,13 +208,16 @@ void set_new_word_size( int size_code)
 //
 uint64_t sign_extend( uint64_t v, int siz) {
 
+#ifdef DEBUG
   printf("Sign extend 0x%" PRIx64 " from %d bits\n", v, siz);
-
+#endif
   int64_t r = v;
   
   if( siz < 64) {
     for( int i=siz; i<64; i++) {
+#ifdef DEBUG
       printf(" bit %d test: %d\n", i, (v & (1LL << (siz-1))) != 0);
+#endif
       if( v & (1LL << (siz-1)))
 	r |= 1LL << i;
     }
@@ -251,9 +257,11 @@ uint64_t mask_bits( uint64_t v, int siz) {
 // only insert after digits
 char *insert_every( char *str, int n, char c) {
 
+#ifdef DEBUG
   printf("insert_every( \"%s\", %d, '%c')\n",
 	 str, n, c);
-
+#endif
+  
   static char buff[DPY_MAX];
   char *dp = buff;		/* destination pointer */
   char *sp = &str[strlen(str)-1]; /* source pointer, last char of input string */
@@ -264,15 +272,17 @@ char *insert_every( char *str, int n, char c) {
 
   for( size_t i=0; i<strlen(str); i++) {
     if( i > 0 && !(i % n) && isxdigit(*sp)) {
+#ifdef DEBUG
       printf("Inserting %c before %c\n", c, *sp);
+#endif
       *dp++ = c;
     }
     lastc = *dp++ = *sp--;
   }
   *dp++ = '\0';
-
+#ifdef DEBUG
   printf("insert_every first result = \"%s\"\n", buff);
-
+#endif
   str_rev( buff);
   return buff;
 }
@@ -288,8 +298,9 @@ void swap_char( char *cx, char *cy) {
 void str_rev( char *s) {
   int n = strlen(s);
 
+#ifdef DEBUG
   printf("str_rev( \"%s\")\n", s);
-
+#endif
   if( !n) return;			/* protect against empty strings */
   if( n < 4)
     swap_char( &s[0], &s[n-1]);
@@ -297,8 +308,8 @@ void str_rev( char *s) {
     for( int i=0; i<n/2; i++)
       swap_char(&s[i], &s[n-i-1]);
   }
-
+#ifdef DEBUG
   printf("str_rev( \"%s\")\n", s);
-
+#endif
 }
   
