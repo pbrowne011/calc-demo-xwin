@@ -11,6 +11,13 @@ To build:
   $ make clean
   $ make
 ```
+What works:
+
+* Value entry with various word sizes and hex/bin/dec radix
+* Conversion between sizes with sign-extension
+* Negate with CHS
+* Twos compliment arithmetic
+* Stack ops similar to HP: Enter, Drop, exchange, clear
 
 Very early screenshot below
 
@@ -24,3 +31,4 @@ Very early screenshot below
 * check arithmetic behavior vs word size
 * add some more functions and hot-keys
 * add hot-key menu somewhere
+* use a bigger font for the display
