@@ -2,6 +2,9 @@
 
 #include <stdint.h>
 
+#include "int_limits.h"
+
+
 // display buffer max size
 #define DPY_MAX 100
 
@@ -27,6 +30,7 @@
 #define A_ADD 2
 #define A_MUL 3
 #define A_DIV 4
+#define A_CHS 5
 
 // stack callback args
 #define S_DROP 0
@@ -55,6 +59,7 @@ alloc int radix;		       /* current radix */
 alloc int wsize;		       /* current word size 8/16/32/64 */
 alloc int sign;			       /* signed (1) or unsigned (0) */
 alloc int push;			       /* (1) means push on next digit */
+alloc int clear;		       /* (1) means clear on next digit */
 
 #define r_display r_stack[0]
 #define r_x r_stack[0]
@@ -84,4 +89,4 @@ uint64_t mask_bits( uint64_t, int siz);
 // formatting
 char *insert_every( char *str, int n, char c);
 void str_rev( char *s);
-
+uint64_t delete_high_digit( uint64_t v, int r);

@@ -2,6 +2,7 @@
 
 #include "calc_top.h"
 #include "calc.h"
+#include "int_limits.h"
 
 /* Callbacks and freeobj handles for form calc_top */
 
@@ -67,15 +68,60 @@ void cb_digit( FL_OBJECT * ob,
 
   f = fd_calc_top;
 
+  // if push flag is set, push the stack up and clear
   if( push) {
     push = 0;
     stack_up();
     r_display.u64 = 0;
   }
 
-  // handle one digit, ignore wordsize for now
-  if( data < radix)
-    r_display.u64 = (r_display.u64 * radix) + data;
+  // if clear flag is set, clear first
+  if( clear) {
+    clear = 0;
+    r_x.u64 = 0;
+  }
+
+  // handle one digit.
+  if( data < radix) {
+    // for hex, binary and 64-bit word size, just
+    // multiply the value by the radix and add the new digit
+    if( radix == 16 || radix == 2 || wsize == 64) {
+      r_x.u64 = (r_x.u64 * radix) + data;
+    } else {
+
+      // for decimal word sizes < 64...
+      // what we want to do here is to see if we add the digit
+      // it results in an overflow, and if so strip off the
+      // highest non-zero digit so the value scrolls to the left
+
+#ifdef DEBUG
+      printf("Enter digit %ld with X=%" PRIu64 "\n", data, r_x.u64);
+#endif      
+
+      uint64_t b = r_x.u64 * radix;
+      uint64_t r = b + data;
+      
+      if( sign) {
+	while( r > MAX_SIGNED(wsize)) {
+#ifdef DEBUG
+	  printf("signed compare %" PRIu64 " with %" PRIu64 "\n", r, MAX_SIGNED(wsize));
+#endif	    
+	  b = delete_high_digit( b, radix);
+	  r = b + data;
+	}
+      } else {
+	// unsigned
+	while( r > MAX_UNSIGNED(wsize)) {
+#ifdef DEBUG
+	  printf("unsigned compare %" PRIu64 " with %" PRIu64 "\n", r, MAX_UNSIGNED(wsize));
+#endif	    
+	  b = delete_high_digit( b, radix);
+	  r = b + data;
+	}
+      }
+      r_x.u64 = r;
+    }
+  }
 
   calc_update_display();
 }
@@ -94,8 +140,11 @@ void cb_arith( FL_OBJECT * ob,
   push = 1;
 
   switch( data) {
+  case A_CHS:
+    r_x.u64 = -((int64_t)r_x.u64);
+    break;
   case A_CLR:
-    r_display.u64 = 0;
+    r_x.u64 = 0;
     break;
   case A_SUB:
     r_y.u64 -= r_x.u64;
@@ -137,7 +186,7 @@ void cb_stack( FL_OBJECT * ob,
     break;
   case S_PUSH:			/* ENTER */
     stack_up();
-    r_x.u64 = 0;
+    clear = 1;			/* set flag to clear on next entry */
     break;
   case S_SWAP:			/* X/Y */
     r_temp = r_x;
@@ -150,6 +199,34 @@ void cb_stack( FL_OBJECT * ob,
 }
 
 
+//
+// subtract the most-significant non-zero digit from v with radix
+//
+uint64_t delete_high_digit( uint64_t v, int radix)
+{
+  int nd = 0;
+  uint64_t t = v;
+  uint64_t s = 1;
 
+#ifdef DEBUG
+  printf("delete_high_digit( %" PRIu64 " (0x%" PRIx64 "), %d\n", v, v, radix);
+#endif  
 
+  if( v < (uint64_t)radix)
+    return 0;
+
+  // find highest non-zero digit by successive division
+  while( t > (uint64_t)radix && nd < 32) {
+    nd++;
+    t /= radix;
+    s *= radix;
+  }
+  v -= (s*t);
+
+#ifdef DEBUG
+  printf("  result: %" PRIu64 "( 0x%" PRIx64 ") nd=%d\n", v, v, nd);
+#endif  
+
+  return v;
+}
 

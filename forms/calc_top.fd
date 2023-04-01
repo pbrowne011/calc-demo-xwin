@@ -10,7 +10,7 @@ Unit of measure: FL_COORD_PIXEL
 Name: calc_top
 Width: 600
 Height: 450
-Number of Objects: 50
+Number of Objects: 51
 
 --------------------
 class: FL_BOX
@@ -672,7 +672,7 @@ label: CLx
 shortcut: 
 resize: FL_RESIZE_ALL
 gravity: FL_NoGravity FL_NoGravity
-name: 
+name: b_clx
 callback: cb_arith
 argument: 0
 
@@ -855,6 +855,24 @@ gravity: FL_NoGravity FL_NoGravity
 name: b_swap
 callback: cb_stack
 argument: 2
+
+--------------------
+class: FL_BUTTON
+type: FL_NORMAL_BUTTON
+box: 260 180 40 30
+boxtype: FL_UP_BOX
+colors: FL_BLACK FL_COL1
+alignment: FL_ALIGN_CENTER
+style: FL_NORMAL_STYLE
+size: FL_DEFAULT_SIZE
+lcol: FL_WHITE
+label: CHS
+shortcut: 
+resize: FL_RESIZE_ALL
+gravity: FL_NoGravity FL_NoGravity
+name: b_chs
+callback: cb_arith
+argument: 5
 
 ==============================
 create_the_forms
