@@ -11,6 +11,9 @@ To build:
   $ make clean
   $ make
 ```
+
+Also see [macOS instructions](README-MacOS.md).
+
 What works:
 
 * Value entry with various word sizes and hex/bin/dec radix
