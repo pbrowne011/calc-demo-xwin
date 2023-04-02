@@ -1,6 +1,9 @@
 all: calc
 
-CFLAGS = -DDEBUG
+# include needed for OS-X
+CFLAGS = -I/usr/X11/include
+
+#CFLAGS = -DDEBUG
 
 clean:
 	rm -f *.o *~ calc
