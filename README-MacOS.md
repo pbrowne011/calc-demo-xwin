@@ -8,7 +8,7 @@ running macOS 12.4 (Monterey).  Note that a full Xcode install was not needed.
 
 You can read about this
 [here](https://www.freecodecamp.org/news/install-xcode-command-line-tools/).
-I typed `git` and it triggered the install, which took around 20 minutes.
+I typed `git` in a terminal and it triggered the install, which took around 20 minutes.
 
 **Install XQuartz**
 
