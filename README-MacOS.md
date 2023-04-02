@@ -20,7 +20,7 @@ From `https://www.xquartz.org`.  Install the package.
 $ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
-After the install it will suggest adding some stuff to your shell profile, which I did.  Not sure if this was critical.
+After the install it will suggest adding some stuff to your shell profile, which I did.  See [example](mac-zsh-profile.txt).  Not sure if this was critical.
 
 **Install jpeg libraries required by XForms**
 
