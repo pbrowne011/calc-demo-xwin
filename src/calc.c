@@ -246,6 +246,7 @@ uint64_t mask_bits( uint64_t v, int siz) {
     r &= 0xff;
     break;
   default:
+    break;
   }
 
   return r;
