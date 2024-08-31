@@ -49,6 +49,13 @@ void cb_mode( FL_OBJECT * ob,
 #endif
     set_new_word_size( data);
     break;
+  case M_WOOD:
+      radix = 10;
+      sign = 0;
+      set_new_word_size(M_32);
+      fl_set_button(fd_calc_top->pb_32, 1);
+      fl_set_button(fd_calc_top->pb_dec, 1);
+      break;
   default:
     printf("Unknown mode %ld\n", data);
 
@@ -198,6 +205,15 @@ void cb_stack( FL_OBJECT * ob,
   calc_update_display();
 }
 
+
+/***************************************
+ ***************************************/
+
+void cb_wood( FL_OBJECT * ob,
+              long        data )
+{
+    ;
+}
 
 //
 // subtract the most-significant non-zero digit from v with radix

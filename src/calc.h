@@ -23,6 +23,7 @@
 #define M_32 5
 #define M_16 6
 #define M_8 7
+#define M_WOOD 8
 
 // arith callback args
 #define A_CLR 0
@@ -36,6 +37,10 @@
 #define S_DROP 0
 #define S_PUSH 1
 #define S_SWAP 2
+
+// display units
+#define P_IN 0
+#define P_MM 1
 
 union u_reg {
   uint8_t u8;

@@ -11,6 +11,7 @@ void cb_digit( FL_OBJECT *, long );
 void cb_arith( FL_OBJECT *, long );
 void cb_stack( FL_OBJECT *, long );
 void cb_mode( FL_OBJECT *, long );
+void cb_wood( FL_OBJECT *, long );
 
 
 /* Forms and Objects */
@@ -59,6 +60,9 @@ typedef struct {
     FL_OBJECT * reg_T;
     FL_OBJECT * b_swap;
     FL_OBJECT * b_chs;
+    FL_OBJECT * w_mm;
+    FL_OBJECT * w_in;
+    FL_OBJECT * w_frac;
 } FD_calc_top;
 
 FD_calc_top * create_form_calc_top( void );
